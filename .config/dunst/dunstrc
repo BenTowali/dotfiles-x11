@@ -1,0 +1,55 @@
+[global]
+		# Appearance
+		geometry = "0x0-30+20"
+    transparency = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    corner_radius = 5
+    frame_width = 3
+    frame_color = "#aaaaaa"
+    separator_color = auto
+    font = JetBrains Mono Medium 10
+    markup = full
+    alignment = center
+    format = "<b>%s</b>\n%b"
+    ellipsize = middle
+    line_height = 0
+    icon_position = left
+    min_icon_size = 32
+		show_indicators = yes
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    stack_duplicates = true
+    ignore_newline = no
+    sort = yes
+
+		# Behaviour
+    title = Dunst
+    class = Dunst
+    mouse_left_click = close_current
+    sticky_history = no
+    history_length = 20
+    show_age_threshold = 60
+    hide_duplicate_count = true
+    monitor = 0
+    follow = none
+    indicate_hidden = yes
+
+[urgency_low]
+    background = "#2b2b2b"
+    foreground = "#ffffff"
+    timeout = 5
+    default_icon = /home/ben/.config/dunst/normal.png
+
+[urgency_normal]
+    background = "#2b2b2b"
+    foreground = "#ffffff"
+    timeout = 5
+    default_icon = /home/ben/.config/dunst/normal.png
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 5
+    default_icon = /home/ben/.config/dunst/critical.png

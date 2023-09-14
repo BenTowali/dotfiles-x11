@@ -1,0 +1,37 @@
+window:
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  startup_mode: Windowed
+
+  # Window title
+  title: Alacritty
+
+font:
+  size: 15.0
+  normal:
+    family: JetBrains Mono
+    style: Regular
+
+  bold:
+    family: JetBrains Mono
+    style: Bold
+
+  italic:
+    family: JetBrains Mono
+    style: Italic
+
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+
+cursor:
+  style:
+    shape: Beam
+
+shell:
+  program: /bin/zsh
+
+mouse:
+  hide_when_typing: true

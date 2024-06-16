@@ -1,0 +1,65 @@
+# Basic Options
+set hidden true
+set icons true
+set incsearch true
+set scrolloff 8
+
+# Custom Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+			*.7z) 7z x "$f" ;;
+			*.rar) unrar "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd clear_trash %trash-empty
+cmd mkdir %IFS=" "; mkdir -- "$*"
+cmd mkfile %IFS=" "; touch -- "$*"
+
+cmd dragon %dragon-drop -a -x "$fx"
+
+# Bindings
+## Unbind
+map d
+map m
+map w
+map t
+
+## Bind
+map y copy
+map x cut
+map p paste
+map dd trash
+map tc clear_trash
+map dr dragon
+map w unarchive
+map md push :mkdir<space>
+map mf push :mkfile<space>
+map gh cd ~/
+

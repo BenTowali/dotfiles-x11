@@ -1,0 +1,28 @@
+[window]
+# Values for `startup_mode`:
+#   - Windowed
+#   - Maximized
+#   - Fullscreen
+startup_mode = "Maximized"
+title = "Alacritty"
+
+[font]
+size = 15.0
+normal.family = "JetBrainsMono Nerd Font"
+normal.style = "Regular"
+bold.family = "JetBrainsMono Nerd Font"
+bold.style = "Bold"
+italic.family = "JetBrainsMono Nerd Font"
+italic.style = "Italic"
+bold_italic.family = "JetBrainsMono Nerd Font"
+bold_italic.style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam"}
+
+[shell]
+program = "/bin/zsh"
+
+[mouse]
+hide_when_typing = true
+
